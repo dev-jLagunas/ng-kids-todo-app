@@ -1,1 +1,25 @@
-<p>todo-counter works!</p>
+<section class="flex justify-center items-center">
+  @if (doneTasksCount > 0) {
+
+  <div class="text-xs lg:text-2xl pl-10">
+    <h3>
+      <span class="text-xl lg:text-4xl">{{ doneTasksCount }}</span> task(s)
+      completed today!
+    </h3>
+    <p>
+      <span class="text-xl lg:text-4xl"> {{ goal }}</span> tasks remaining until
+      goal!
+    </p>
+    <p class="text-3xl text-orange-400 tracking-widest lg:text-5xl font-bold">
+      {{ encouragingSentence }}
+    </p>
+  </div>
+  <div class="h-20 w-20 lg:h-44 lg:w-44">
+    <img
+      src="assets/svgs/teacher-small.svg"
+      alt="teacher"
+      class="h-full w-full object-cover"
+    />
+  </div>
+  }
+</section>

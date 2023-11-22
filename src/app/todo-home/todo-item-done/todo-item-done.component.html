@@ -1,1 +1,30 @@
-<p>todo-item-done works!</p>
+<section class="text-white">
+  @if (taskAccomplished) {
+  <div class="fixed inset-0 bg-black bg-opacity-70 z-50">
+    <app-todo-surprise (close)="onClose()"></app-todo-surprise>
+  </div>
+  }
+  <div class="flex justify-center items-center">
+    <p
+      class="text-base lg:text-2xl mb-2 border-2 border-blue-500 px-2 rounded-md"
+    >
+      Completed Tasks!
+    </p>
+  </div>
+  @if (doneTasks.length > 0) { @for ( task of doneTasks; track task.id) {
+  <div class="">
+    <div class="flex flex-row justify-center items-center">
+      <p class="border px-2 rounded mr-1 mb-1 text-xs lg:text-2xl">
+        {{ task.text }}
+      </p>
+    </div>
+    <button
+      class="bg-red-500 hover:bg-red-600 text-white text-xs lg:text-xl py-1 px-2 rounded-md absolute bottom-2 -right-5 transform -rotate-45 shadow-lg"
+      (click)="clearAllDoneTasks()"
+    >
+      Clear All
+    </button>
+  </div>
+
+  } }
+</section>

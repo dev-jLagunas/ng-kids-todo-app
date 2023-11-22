@@ -1,1 +1,42 @@
-<p>todo-item works!</p>
+<section class="">
+  <div class="">
+    <article class="text-sm">
+      <input
+        type="text"
+        placeholder="Enter a task"
+        [(ngModel)]="todoText"
+        class="text-black outline outline-red-500 px-2 rounded mr-2 w-52 lg:w-96"
+        (keydown.enter)="saveTodo()"
+      />
+
+      <!-- Save button -->
+      <button
+        (click)="saveTodo()"
+        class="w-max mx-auto bg-red-500 text-white p-1 rounded-md"
+      >
+        Save
+      </button>
+    </article>
+  </div>
+  @for ( task of todoList; track task.id) {
+  <div class="flex justify-center mt-2">
+    <p
+      class="border px-2 rounded mr-1 text-xs lg:text-2xl flex justify-center items-center"
+    >
+      {{ task.text }}
+    </p>
+    <button
+      (click)="deleteTask(task.id)"
+      class="border px-2 rounded mr-1 border-red-500 bg-red-500 bg-opacity-50 text-xs lg:text-2xl flex justify-center items-center"
+    >
+      delete
+    </button>
+    <button
+      (click)="markTaskAsDone(task.id)"
+      class="border px-2 rounded mr-1 border-blue-500 bg-blue-500 bg-opacity-50 text-xs lg:text-2xl flex justify-center items-center"
+    >
+      done
+    </button>
+  </div>
+  }
+</section>

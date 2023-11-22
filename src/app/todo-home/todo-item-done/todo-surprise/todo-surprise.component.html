@@ -1,1 +1,24 @@
-<p>todo-surprise works!</p>
+<div class="h-screen flex flex-col justify-center items-center">
+  <div
+    class="bg-white text-black rounded-2xl text-center mb-2 border-4 border-orange-400 shadow-sm shadow-orange-400 width-adjust width-sm"
+  >
+    <p
+      class="w-max mx-auto border custom-classes px-2 rounded-md tracking-widest"
+    >
+      Here is a dad joke for you!
+    </p>
+    <p class="font-custom">
+      {{ joke }}
+    </p>
+    <button class="font-bold text-4xl text-red-500" (click)="onClose()">
+      X
+    </button>
+  </div>
+  <div class="h-5 w-5">
+    <img
+      src="assets/svgs/mustache-dad.svg"
+      alt="mustache dad"
+      class="h-full w-full object-cover"
+    />
+  </div>
+</div>
